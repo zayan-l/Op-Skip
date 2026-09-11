@@ -1,4 +1,4 @@
-# Op-Skip
+# ⚡ Op-Skip
 
 Code for **Attend, Transform, or Silence: Operator-Level Visual Skipping for
 Efficient Multimodal LLM Inference** ([paper](https://arxiv.org/abs/2606.31903)).
@@ -7,7 +7,12 @@ Op-Skip accelerates multimodal prefill by selectively skipping visual Attention
 updates, FFN updates, or both. It retains the visual sequence and full per-layer
 KV cache, without training or changing model weights.
 
-## Installation
+## 🔥 News
+
+- `2026.09.11` 📦 Added Op-Skip implementations, preset policies, and evaluation scripts for Qwen2.5-VL, Qwen3-VL, LLaVA-1.5, and LLaVA-NeXT.
+- `2026.06.30` 📄 Our paper [Attend, Transform, or Silence](https://arxiv.org/abs/2606.31903) is available on arXiv!
+
+## 🛠️ Installation
 
 Use a separate environment for each model family. From the repository root:
 
@@ -37,7 +42,7 @@ python -m pip install --no-deps 'git+https://github.com/LLaVA-VL/LLaVA-NeXT.git'
 These projects share the `llava` namespace; do not install both in one environment.
 Keep the pinned dependencies and record the model-source commit used for reproduction.
 
-## Quick start
+## 🚀 Quick start
 
 ```python
 import torch
@@ -68,7 +73,7 @@ python examples/infer.py \
 Supported setup: the dense checkpoints above, batch size 1, greedy generation,
 and SDPA. `remove_opskip(model)` restores the patched instance.
 
-## Policies
+## 🎛️ Policies
 
 Select a JSON file from `configs/<family>/`. The preset number counts selected
 layers, not skipped operators or a FLOPs percentage. Layer indices are zero-based.
@@ -84,7 +89,7 @@ updates; `freeze` skips both. Unlisted layers run normally. In the released
 policies, `freeze` also freezes the text prefix before the visual span, updating
 only the text suffix while retaining K/V for every token.
 
-## Evaluation
+## 📊 Evaluation
 
 Install a clean upstream **lmms-eval 0.6.1** in the chosen model environment:
 
@@ -114,7 +119,7 @@ For other models, use `eval_qwen2_5_vl.sh`, `eval_llava.sh`, or
 Use the same checkpoint, data, prompts, and image settings for comparisons.
 Each run saves its policy and evaluator arguments in `opskip_config.json`.
 
-## Prefill speedup
+## ⚡ Prefill speedup
 
 Optimized Op-Skip versus Vanilla on A800-SXM4-80GB, batch size 1.
 Each cell is the **median of ten task-level speedup ratios at that preset**.
@@ -130,7 +135,8 @@ Each cell is the **median of ten task-level speedup ratios at that preset**.
 | 32 | — | 1.247× | 1.488× | 2.084× |
 | 36 | — | 1.269× | — | — |
 
-## Latency benchmark
+## ⏱️ Latency benchmark
+
 To measure the current code on your hardware:
 
 ```bash
@@ -142,7 +148,7 @@ python scripts/benchmark_latency.py \
   --output outputs/latency.json
 ```
 
-## Citation and acknowledgements
+## 📄 Citation
 
 ```bibtex
 @article{luo2026attend,
@@ -153,5 +159,6 @@ python scripts/benchmark_latency.py \
 }
 ```
 
-Built on Transformers/Qwen, LLaVA, LLaVA-NeXT and lmms-eval. See
-[LICENSE](LICENSE).
+## 🙏 Acknowledgements
+
+Our code builds on the excellent open-source contributions of Transformers, Qwen, LLaVA, LLaVA-NeXT, and lmms-eval. We express our sincere gratitude to their authors and contributors for making this work possible.

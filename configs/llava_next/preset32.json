@@ -1,0 +1,48 @@
+{
+  "model_family": "llava_next",
+  "checkpoint": "liuhaotian/llava-v1.6-vicuna-7b",
+  "num_layers": 32,
+  "preset": 32,
+  "budget": 32,
+  "attention_only": [
+    1,
+    2,
+    7,
+    8,
+    9,
+    11
+  ],
+  "ffn_only": [
+    0,
+    3,
+    4,
+    5,
+    6,
+    10,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "freeze": [
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "freeze_scope": "prefix_through_visual",
+  "mlp_chunk_size": 0,
+  "source": "Eval/scripts/lmms/llava/llava-next-frozen.sh"
+}

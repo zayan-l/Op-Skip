@@ -1,0 +1,9 @@
+numpy==1.26.4
+sentencepiece==0.2.1
+torch==2.4.1
+torchvision==0.19.1
+transformers==4.37.2
+tokenizers==0.15.1
+accelerate==0.21.0
+datasets==2.16.1
+pyarrow==17.0.0

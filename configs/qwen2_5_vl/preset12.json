@@ -1,0 +1,29 @@
+{
+  "model_family": "qwen2_5_vl",
+  "checkpoint": "Qwen/Qwen2.5-VL-7B-Instruct",
+  "num_layers": 28,
+  "preset": 12,
+  "budget": 12,
+  "attention_only": [
+    16
+  ],
+  "ffn_only": [
+    17,
+    18,
+    19,
+    26
+  ],
+  "freeze": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    27
+  ],
+  "freeze_scope": "prefix_through_visual",
+  "mlp_chunk_size": 0,
+  "source": "Archived qwen25_frozen execution log: qwen25_frozen_7B-Instruct_phase_12-20260621_074822-1801.log (AI2D result matches paper Table 10)",
+  "rmsnorm_backend": "triton_rounded"
+}

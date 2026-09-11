@@ -1,0 +1,22 @@
+{
+  "model_family": "llava",
+  "checkpoint": "liuhaotian/llava-v1.5-7b",
+  "num_layers": 32,
+  "preset": 8,
+  "budget": 8,
+  "attention_only": [],
+  "ffn_only": [],
+  "freeze": [
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "freeze_scope": "prefix_through_visual",
+  "mlp_chunk_size": 0,
+  "source": "Eval/scripts/lmms/llava/llava15-frozen2.sh"
+}

@@ -1,0 +1,8 @@
+numpy==1.26.4
+sentencepiece==0.2.1
+torch==2.1.2
+torchvision==0.16.2
+transformers @ https://github.com/huggingface/transformers/archive/1c39974a4c4036fd641bc1191cc32799f85715a4.zip
+tokenizers==0.15.2
+accelerate==0.29.3
+datasets==5.0.0

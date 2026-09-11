@@ -1,4 +1,7 @@
-# ⚡ Op-Skip
+<h1 align="center">
+  <a href="opskip.pdf"><img src="assets/opskip-logo.png" alt="Op-Skip logo" width="48" align="absmiddle"></a>
+  Op-Skip
+</h1>
 
 Code for **Attend, Transform, or Silence: Operator-Level Visual Skipping for
 Efficient Multimodal LLM Inference** ([paper](https://arxiv.org/abs/2606.31903)).
